@@ -891,6 +891,7 @@ MonoBehaviour:
   - {fileID: 409199768152312265, guid: f4236d561d00e744dbd293693132999f, type: 3}
   - {fileID: 2317371380152480004, guid: b73d07b714a7001459b7d96411c94b6d, type: 3}
   - {fileID: 3290158982951088911, guid: b2010a51f7e68504a9b543678165e703, type: 3}
+  turnPos: 0
 --- !u!1 &1473585773
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
-    private float bound = 2.5f;
+    private float bound = 2.4f;
     float horizontalInput;
     Vector2 movement;
     float speed = 5f;
