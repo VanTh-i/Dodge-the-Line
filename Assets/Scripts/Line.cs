@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Line : MonoBehaviour
 {
+    
     public float speed = 2f;
     float bound = 9;
     // Start is called before the first frame update
@@ -22,6 +23,7 @@ public class Line : MonoBehaviour
         SpawnManager turnPos = FindObjectOfType<SpawnManager>();
         if (turnPos.turnPos)
         {
+            
             transform.Translate(Vector3.down * GameManager.Instance.gameSpeed * Time.deltaTime);
         }
         else

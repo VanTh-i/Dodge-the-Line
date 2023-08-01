@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3290158982882812363}
   - component: {fileID: 3290158982882812360}
   - component: {fileID: 3662988391814390915}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GreyLineRight
   m_TagString: GreyLine
   m_Icon: {fileID: 0}
@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1acaefdb7b4484aa186358cbbc12f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
 --- !u!1 &3290158983946367279
 GameObject:
   m_ObjectHideFlags: 0
@@ -168,7 +169,7 @@ GameObject:
   - component: {fileID: 3290158983946367273}
   - component: {fileID: 3290158983946367278}
   - component: {fileID: 5796276946886475246}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: GreyLineLeft
   m_TagString: GreyLine
   m_Icon: {fileID: 0}

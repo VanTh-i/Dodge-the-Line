@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -44,6 +45,9 @@ public class GameManager : MonoBehaviour
         healthPoint = 3;
         score = 0f;
         gameOverUI.gameObject.SetActive(false);
+
+        Animator anim = GameObject.Find("Player").GetComponent<Animator>();
+        anim.enabled = false;
     }
     void PlayerDead()
     {
@@ -52,6 +56,9 @@ public class GameManager : MonoBehaviour
             isDead = true;
             gameSpeed = 0;
             gameOverUI.gameObject.SetActive(true);
+
+            Animator anim = GameObject.Find("Player").GetComponent<Animator>();
+            anim.enabled = false;
         }
     }
 }

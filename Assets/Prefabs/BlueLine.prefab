@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2317371380152480005}
   - component: {fileID: 1532644173247335419}
   - component: {fileID: 7915107048345666795}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BlueLine
   m_TagString: BlueLine
   m_Icon: {fileID: 0}
@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1acaefdb7b4484aa186358cbbc12f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
 --- !u!61 &7915107048345666795
 BoxCollider2D:
   m_ObjectHideFlags: 0

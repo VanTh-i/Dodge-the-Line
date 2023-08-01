@@ -5,6 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     private Rigidbody2D rb;
+    private Animator anim;
     private float bound = 2.4f;
     float horizontalInput;
     Vector2 movement;
@@ -13,6 +14,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,11 +41,11 @@ public class Player : MonoBehaviour
     }
     void OutOfBound()
     {
-        if (transform.position.x > bound)
+        if (transform.position.x >= bound)
         {
             transform.position = new Vector3(bound, transform.position.y, transform.position.z);
         }
-        if (transform.position.x < -bound)
+        if (transform.position.x <= -bound)
         {
             transform.position = new Vector3(-bound, transform.position.y, transform.position.z);
         }
@@ -68,5 +70,16 @@ public class Player : MonoBehaviour
     void GetHit()
     {
         GameManager.Instance.healthPoint--;
+        StartCoroutine(IFrame());
+    }
+    IEnumerator IFrame()
+    {
+        Physics2D.IgnoreLayerCollision(6, 7);
+        anim.enabled = true;
+
+        yield return new WaitForSeconds(3f);
+
+        Physics2D.IgnoreLayerCollision(6, 7, false);
+        anim.enabled = false;
     }
 }
