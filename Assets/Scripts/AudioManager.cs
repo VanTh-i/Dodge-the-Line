@@ -24,10 +24,6 @@ public class AudioManager : MonoBehaviour
         }
 
     }
-    private void Start()
-    {
-        
-    }
     public void PlayMusic()
     {
         musicSource.clip = background;

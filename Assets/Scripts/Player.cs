@@ -75,7 +75,7 @@ public class Player : MonoBehaviour
             AudioManager.Instance.PlaySFX(AudioManager.Instance.death);
             AudioManager.Instance.musicSource.Stop();
         }
-        AudioManager.Instance.PlaySFX(AudioManager.Instance.hit);
+        else AudioManager.Instance.PlaySFX(AudioManager.Instance.hit);
 
         StartCoroutine(IFrame());
     }
