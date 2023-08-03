@@ -64,12 +64,19 @@ public class Player : MonoBehaviour
 
         if (collision.gameObject.CompareTag("GreyLine"))
         {
-            GetHit();
+            GetHit();      
         }
     }
     void GetHit()
     {
         GameManager.Instance.healthPoint--;
+        if (GameManager.Instance.healthPoint == 0)
+        {
+            AudioManager.Instance.PlaySFX(AudioManager.Instance.death);
+            AudioManager.Instance.musicSource.Stop();
+        }
+        AudioManager.Instance.PlaySFX(AudioManager.Instance.hit);
+
         StartCoroutine(IFrame());
     }
     IEnumerator IFrame()

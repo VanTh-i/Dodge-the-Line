@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public GameObject[] linePrefabs;
+    [Range(0f,1f)]
+    public float spawnChange;
+
+    public GameObject[] RedBlueLine;
+    public GameObject GreyLine;
+    private GameObject randomLinePrefabs;
+
     public GameObject arrowUp;
     public GameObject arrowDown;
 
@@ -41,21 +47,25 @@ public class SpawnManager : MonoBehaviour
             for (int i = 0; i <= 10; i++)
             {
                 turnPos = true;
-                int randomLine = Random.Range(0, linePrefabs.Length);
 
-                if (randomLine == 2)
+                float randomRate= Random.Range(0f, 1f);
+
+                if (randomRate <= spawnChange)
                 {
+                    randomLinePrefabs = GreyLine;
                     float greyRandomPosX = Random.Range(-1.5f, 1.5f);
                     spawnPos = new Vector3(greyRandomPosX, linePos, 0);
                 }
-                else
+                else if(randomRate > spawnChange)
                 {
+                    int randomLine = Random.Range(0, RedBlueLine.Length);
+                    randomLinePrefabs = RedBlueLine[randomLine];
                     spawnPos = new Vector3(0, linePos, 0);
                 }
 
                 yield return new WaitForSeconds(2f);
 
-                Instantiate(linePrefabs[randomLine], spawnPos, linePrefabs[randomLine].transform.rotation);
+                Instantiate(randomLinePrefabs, spawnPos, randomLinePrefabs.transform.rotation);
             }
 
             arrowDown.gameObject.SetActive(false);
@@ -66,21 +76,40 @@ public class SpawnManager : MonoBehaviour
             for (int i = 0; i <= 10; i++)
             {
                 turnPos = false;
-                int randomLine = Random.Range(0, linePrefabs.Length);
 
-                if (randomLine == 2)
+                float randomRate = Random.Range(0f, 1f);
+
+                if (randomRate <= spawnChange)
                 {
+                    randomLinePrefabs = GreyLine;
                     float greyRandomPosX = Random.Range(-1.5f, 1.5f);
                     spawnPos = new Vector3(greyRandomPosX, -linePos, 0);
                 }
-                else
+                else if (randomRate > spawnChange)
                 {
+                    int randomLine = Random.Range(0, RedBlueLine.Length);
+                    randomLinePrefabs = RedBlueLine[randomLine];
                     spawnPos = new Vector3(0, -linePos, 0);
                 }
 
                 yield return new WaitForSeconds(2f);
 
-                Instantiate(linePrefabs[randomLine], spawnPos, linePrefabs[randomLine].transform.rotation);
+                Instantiate(randomLinePrefabs, spawnPos, randomLinePrefabs.transform.rotation);
+                //int randomLine = Random.Range(0, RedBlueLine.Length);
+
+                //if (randomLine == 2)
+                //{
+                //    float greyRandomPosX = Random.Range(-1.5f, 1.5f);
+                //    spawnPos = new Vector3(greyRandomPosX, -linePos, 0);
+                //}
+                //else
+                //{
+                //    spawnPos = new Vector3(0, -linePos, 0);
+                //}
+
+                //yield return new WaitForSeconds(2f);
+
+                //Instantiate(RedBlueLine[randomLine], spawnPos, RedBlueLine[randomLine].transform.rotation);
             }      
             
         }

@@ -6,7 +6,7 @@ public class Line : MonoBehaviour
 {
     
     public float speed = 2f;
-    float bound = 9;
+    float bound = 10;
     // Start is called before the first frame update
     void Start()
     {

@@ -24,7 +24,7 @@ public class Health : MonoBehaviour
 
         for (int i = 0; i < GameManager.Instance.healthPoint; i++)
         {
-            hearts[i].sprite = fullHeart; 
+            hearts[i].sprite = fullHeart;
         }
     }
 }
